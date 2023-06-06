@@ -1,7 +1,21 @@
-import '../styles/globals.css'
+import '../styles/globals.css';
+import Link from 'next/link';
 
-function MyApp({ Component, pageProps }) {
-  return <Component {...pageProps} />
+export default function MyApp({ Component, pageProps }) {
+  return(
+    <>
+    <Navigation />
+    <Component {...pageProps} />
+    </>
+  )
 }
 
-export default MyApp
+function Navigation() {
+  return(
+    <>
+    <Link href='/'>Home </Link>
+    <Link href='/blog'>Blog </Link>
+    <Link href='/course'>Course </Link>
+    </>
+  )
+}
